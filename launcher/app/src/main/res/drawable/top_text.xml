@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Top menu text and icons (Inputs, Settings, the Inputs list): bright in every state, since the
+     top menu's focus is a half-black fill rather than the white the rest of the app uses. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#FFFFFFFF" />
+</selector>

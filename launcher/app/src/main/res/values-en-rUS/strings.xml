@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- US English: the date reads "Tuesday, October 20", the standard written US order. Other English
+     regions keep the default "Tuesday 20 October". Everything else falls back to values/. -->
+<resources>
+    <string name="date_format">MMM d, yyyy</string>
+</resources>

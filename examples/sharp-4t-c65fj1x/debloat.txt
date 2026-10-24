@@ -1,0 +1,47 @@
+# Sharp 4T-C65FJ1X 4K Google TV (built by MTC, device expo, MediaTek MSD9602PA), Malaysia
+# Google TV 14 (SDK 34), firmware UKNV.260716.001, 1.9 GB RAM
+# Fingerprint: Sharp/MSD9602PA_Sharp/expo:14/UKNV.260716.001/15877852:user/release-keys
+# Built from a package scan of this TV plus the nearest lists (hitachi-65qledsm20, same MTC
+# platform; google-chromecast-gtv-4k and tcl-qm6k-google-tv, same Google TV 14). Verified 2026-10-22:
+# applied in two batches, Glass TV installed as Home; Home, remote, Input button, HDMI, mic and Cast work.
+# - First install rolled back: setupwraith/.RecoveryActivity took Home. Disabling setupwraith, then
+#   re-running launcher\build-and-install.ps1, fixed it.
+# - dreamx was disabled after the launcher, once screensaver_components pointed at ClockDream.
+#
+# Apply:   tools\disable.ps1 -TvHost <tv ip> examples\sharp-4t-c65fj1x\debloat.txt
+# Undo:    tools\restore.ps1 -TvHost <tv ip> examples\sharp-4t-c65fj1x\debloat.txt com.google.android.apps.tv.launcherx
+# Everything is DISABLED, not uninstalled. Comment out any line you want to keep.
+#
+# Stock launcher: com.google.android.apps.tv.launcherx. Live TV: com.mediatek.wwtv.tvcenter.
+# Other HOME claimants: com.android.tv.settings, com.google.android.tungsten.setupwraith and
+# com.astro.sott (Astro GO, user-installed) - the new launcher must be set as default explicitly.
+# ADB on 5555 was open with USB debugging on; no Wireless-debugging pairing was needed.
+#
+# KEEP (same MTC platform as hitachi-65qledsm20):
+# - fusion.android.tv.demo: remote Input button and Bluetooth remote pairing, despite the name.
+# - com.mediatek.android.leanbacklauncher.partnercustomizer, com.mediatek.*, com.mediatek.mtc.factory,
+#   mediatek.factorymenu.ui, com.airoha.btd (Bluetooth chip), com.mstar.android.tv.disclaimercustomization.
+# - Play Store / Play Services, Gboard, Cast (mediashell), phone remote (tv.remote.service).
+# - Local apps: Astro, Tonton, iQIYI, Mana2, Durioo, TV Malaysia.
+
+# Batch 1: tracking, telemetry, ads
+tv.anoki.acr.anokiacroptin              # Anoki automatic content recognition (viewing tracking)
+com.google.android.feedback
+com.android.tv.feedbackconsent
+com.android.adservices.api              # Privacy Sandbox ad services; re-enable if Play Store misbehaves
+
+# Batch 2: preloaded apps and background services
+com.google.android.play.games
+com.google.android.youtube.tvmusic
+com.google.android.syncadapters.calendar
+com.google.android.partnersetup         # partner attribution
+com.google.android.apps.tv.dreamx       # ambient screensaver (shows promos), replaced by the launcher's Clock
+
+# Batch 3: personal choice, comment out what you use
+com.google.android.marvin.talkback      # screen reader
+# com.google.android.katniss            # Google Assistant (mic button stops working)
+# com.netflix.ninja                     # Netflix
+
+# Needed for the custom launcher on Google TV: disable only AFTER launcher/ is installed.
+# com.google.android.apps.tv.launcherx  # handled by launcher\build-and-install.ps1
+com.google.android.tungsten.setupwraith

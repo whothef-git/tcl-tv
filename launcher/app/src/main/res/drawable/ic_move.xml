@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Four arrows out from the centre: Move, in the menu that holding OK on an app opens. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp" android:height="20dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="1.6"
+        android:strokeLineJoin="round" android:strokeLineCap="round"
+        android:pathData="M12,3V21M3,12H21M9.5,5.5L12,3L14.5,5.5M9.5,18.5L12,21L14.5,18.5M5.5,9.5L3,12L5.5,14.5M18.5,9.5L21,12L18.5,14.5" />
+</vector>

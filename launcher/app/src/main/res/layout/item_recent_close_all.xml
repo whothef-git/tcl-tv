@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/closeAllRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="96dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Placeholder matching topPill height + margin -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:visibility="invisible" />
+
+    <!-- Container matching cardContainer height (250dp) -->
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Round White Button -->
+            <FrameLayout
+                android:id="@+id/btnCircle"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:background="@drawable/bg_circle_close_all"
+                android:clickable="true"
+                android:elevation="24dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/ivTrash"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Close All"
+                    android:src="@drawable/ic_trash" />
+            </FrameLayout>
+
+            <!-- Text Below Button -->
+            <TextView
+                android:id="@+id/tvCloseAllText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/outfit"
+                android:text="Close All"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

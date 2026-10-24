@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nightstandRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Wallpaper Backdrop that mirrors current launcher wallpaper rotation -->
+    <ImageView
+        android:id="@+id/nightstandBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <!-- 40% dark scrim for clock, date, and prayer badge legibility -->
+    <View
+        android:id="@+id/nightstandScrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <!-- Top-Right Digital Clock & Information Shelf -->
+    <LinearLayout
+        android:id="@+id/nightstandContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="64dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <!-- StandBy Clock Display -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|end"
+            android:orientation="horizontal">
+
+            <TextClock
+                android:id="@+id/nightstandClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="h:mm"
+                android:format24Hour="HH:mm"
+                android:textColor="#FFFFFFFF"
+                android:textSize="72sp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 300"
+                android:letterSpacing="-0.02"
+                android:shadowColor="#B3000000"
+                android:shadowDx="0"
+                android:shadowDy="3"
+                android:shadowRadius="10"
+                android:includeFontPadding="false" />
+
+            <TextClock
+                android:id="@+id/nightstandAmPm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="16dp"
+                android:format12Hour="a"
+                android:format24Hour=""
+                android:textColor="#CCFFFFFF"
+                android:textSize="20sp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 500"
+                android:letterSpacing="0.08"
+                android:shadowColor="#B3000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="6"
+                android:textAllCaps="true"
+                android:includeFontPadding="false" />
+        </LinearLayout>
+
+        <!-- Gregorian Date -->
+        <TextClock
+            android:id="@+id/nightstandDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:format12Hour="EEEE, d MMMM yyyy"
+            android:format24Hour="EEEE, d MMMM yyyy"
+            android:textColor="#E6FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="@font/outfit"
+            android:fontVariationSettings="'wght' 400"
+            android:letterSpacing="0.04"
+            android:shadowColor="#B3000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="6"
+            android:includeFontPadding="false" />
+
+        <!-- Islamic Hijri Date -->
+        <TextView
+            android:id="@+id/nightstandHijri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#D9E6E0D2"
+            android:textSize="16sp"
+            android:fontFamily="@font/outfit"
+            android:fontVariationSettings="'wght' 400"
+            android:letterSpacing="0.06"
+            android:shadowColor="#B3000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="6"
+            android:includeFontPadding="false" />
+
+        <!-- Next Prayer Time Capsule -->
+        <TextView
+            android:id="@+id/nightstandPrayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:background="@drawable/pill_bg"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp"
+            android:fontFamily="@font/outfit"
+            android:fontVariationSettings="'wght' 500"
+            android:letterSpacing="0.05"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="4"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Subtle bottom return hint -->
+    <TextView
+        android:id="@+id/nightstandHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:text="Press any button to resume"
+        android:textColor="#4DFFFFFF"
+        android:textSize="12sp"
+        android:fontFamily="@font/outfit"
+        android:letterSpacing="0.06"
+        android:includeFontPadding="false" />
+</FrameLayout>

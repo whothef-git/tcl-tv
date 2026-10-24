@@ -1,0 +1,27 @@
+tools/venv/
+tools/adbkey/
+__pycache__/
+launcher/.gradle/
+launcher/build/
+launcher/app/build/
+launcher/local.properties
+# your own TV's dumps (serial, android_id, device names) stay local
+backup/
+.DS_Store
+
+# App banners for the webOS simulator preview only: other companies' logos, kept out of the repository.
+webos/samples/
+*.ipk
+
+# Scratch files
+screenshot_*.png
+crop_*.png
+crop_*.jpg
+*_crop.png
+test_*.png
+restore_my_box.sh
+*.apk
+*.idsig
+*.keystore
+*.jks
+

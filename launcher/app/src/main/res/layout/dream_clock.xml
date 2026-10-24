@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screensaver (ClockDream): Clean digital clock positioned in top-right corner over rotating wallpapers -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000">
+
+    <ImageView
+        android:id="@+id/dreamBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/dreamScrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <LinearLayout
+        android:id="@+id/dreamContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="64dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dreamTimeRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|end"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <TextClock
+                android:id="@+id/dreamTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="h:mm"
+                android:format24Hour="HH:mm"
+                android:textColor="#FFFFFFFF"
+                android:textSize="72sp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 300"
+                android:letterSpacing="-0.02"
+                android:shadowColor="#B3000000"
+                android:shadowDx="0"
+                android:shadowDy="3"
+                android:shadowRadius="10"
+                android:includeFontPadding="false" />
+
+            <TextClock
+                android:id="@+id/dreamAmPm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="16dp"
+                android:format12Hour="a"
+                android:format24Hour=""
+                android:textColor="#CCFFFFFF"
+                android:textSize="20sp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 500"
+                android:letterSpacing="0.08"
+                android:shadowColor="#B3000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="6"
+                android:includeFontPadding="false"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <TextClock
+            android:id="@+id/dreamDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:format12Hour="EEEE, d MMMM yyyy"
+            android:format24Hour="EEEE, d MMMM yyyy"
+            android:textColor="#B3FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="@font/outfit"
+            android:fontVariationSettings="'wght' 400"
+            android:letterSpacing="0.04"
+            android:shadowColor="#B3000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="6"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base smoky frosted glass gradient matching reference UI -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#E612151D"
+                android:centerColor="#D9222938"
+                android:endColor="#D95A6882" />
+        </shape>
+    </item>
+
+    <!-- Center radial soft glow/sheen behind cards -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="850dp"
+                android:centerX="50%"
+                android:centerY="52%"
+                android:startColor="#1FFFFFFF"
+                android:centerColor="#08FFFFFF"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Top dark vignette for crisp text contrast -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#33080A0E"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+</layer-list>

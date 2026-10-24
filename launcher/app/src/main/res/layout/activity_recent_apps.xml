@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_recent_apps_glass"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Top Left Title -->
+    <TextView
+        android:id="@+id/tvRecentAppsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/outfit"
+        android:text="Recent Apps"
+        android:textColor="#FFFFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Top Right RAM Status Pill -->
+    <LinearLayout
+        android:id="@+id/ramPill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="64dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_ram_pill"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvRamText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/outfit"
+            android:text="RAM 1.8 GB used of 2.3 GB"
+            android:textColor="#FFE2E8F0"
+            android:textSize="14sp" />
+
+        <ProgressBar
+            android:id="@+id/pbRam"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="85dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="14dp"
+            android:max="100"
+            android:progress="78"
+            android:progressDrawable="@drawable/progress_ram" />
+    </LinearLayout>
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/tvEmptyRecents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/outfit"
+        android:text="No recent apps running"
+        android:textColor="#88FFFFFF"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <!-- Center Carousel with negative overlap item decoration -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecentApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants"
+        android:overScrollMode="never"
+        android:paddingEnd="64dp"
+        android:paddingStart="64dp" />
+
+    <!-- Bottom Center Hint -->
+    <TextView
+        android:id="@+id/tvBottomHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/outfit"
+        android:text="Press ▲ on an app to close it"
+        android:textColor="#90FFFFFF"
+        android:textSize="14sp" />
+
+</FrameLayout>
